@@ -1,5 +1,6 @@
 package identitytheft.infinityrework.mixin;
 
+import identitytheft.infinityrework.InfinityReworkConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.InfinityEnchantment;
@@ -32,7 +33,9 @@ public class InfinityEnchantmentMixin {
 
 	@Inject(at = @At("HEAD"), method = "canAccept", cancellable = true)
 	private void canAccept(Enchantment other, CallbackInfoReturnable<Boolean> cir) {
-		//noinspection ConstantConditions
-		cir.setReturnValue((Object) this != other);
+		if (InfinityReworkConfig.allowMending) {
+			//noinspection ConstantConditions
+			cir.setReturnValue((Object) this != other);
+		}
 	}
 }

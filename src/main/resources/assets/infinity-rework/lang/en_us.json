@@ -1,0 +1,18 @@
+{
+  "infinity-rework.midnightconfig.title": "Infinity Rework Config",
+
+  "infinity-rework.midnightconfig.category.infinity": "Infinity",
+  "infinity-rework.midnightconfig.category.mending": "Mending",
+
+  "infinity-rework.midnightconfig.infinityOnePercentage": "Infinity I",
+  "infinity-rework.midnightconfig.infinityOnePercentage.tooltip": "Percentage chance to not consume an arrow",
+
+  "infinity-rework.midnightconfig.infinityTwoPercentage": "Infinity II",
+  "infinity-rework.midnightconfig.infinityTwoPercentage.tooltip": "Percentage chance to not consume an arrow",
+
+  "infinity-rework.midnightconfig.infinityThreePercentage": "Infinity III",
+  "infinity-rework.midnightconfig.infinityThreePercentage.tooltip": "Percentage chance to not consume an arrow",
+
+  "infinity-rework.midnightconfig.allowMending": "Allow Mending",
+  "infinity-rework.midnightconfig.allowMending.tooltip": "If mending should work with infinity"
+}

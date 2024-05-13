@@ -1,6 +1,7 @@
 package identitytheft.infinityrework.mixin;
 
 import identitytheft.infinityrework.InfinityRework;
+import identitytheft.infinityrework.InfinityReworkConfig;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
@@ -23,10 +24,9 @@ public class BowItemMixin {
 
     @Unique
     private static int getArrowChances(int infinityLevel) {
-        // TODO - add config support
-        if (infinityLevel == 1) return 25;
-        if (infinityLevel == 2) return 50;
-        if (infinityLevel == 3) return 75;
+        if (infinityLevel == 1) return InfinityReworkConfig.infinityOnePercentage;
+        if (infinityLevel == 2) return InfinityReworkConfig.infinityTwoPercentage;
+        if (infinityLevel == 3) return InfinityReworkConfig.infinityThreePercentage;
 
         return 0;
     }

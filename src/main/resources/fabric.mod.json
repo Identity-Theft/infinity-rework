@@ -3,7 +3,7 @@
 	"id": "infinity-rework",
 	"version": "${version}",
 	"name": "Infinity Rework",
-	"description": "Reworks the infinity enchantment to have multiple levels",
+	"description": "Reworks and balances the infinity enchantment",
 	"authors": [
 		"Identity Theft"
 	],
