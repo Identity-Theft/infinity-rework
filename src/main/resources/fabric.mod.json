@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "infinity-rework",
+	"version": "${version}",
+	"name": "Infinity Rework",
+	"description": "Reworks the infinity enchantment to have multiple levels",
+	"authors": [
+		"Identity Theft"
+	],
+	"contact": {
+		"homepage": "https://identity-theft.github.io/",
+		"sources": "https://github.com/Identity-Theft/infinity-rework"
+	},
+	"license": "MIT",
+	"icon": "assets/infinity-rework/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"identitytheft.infinityrework.InfinityRework"
+		]
+	},
+	"mixins": [
+		"infinity-rework.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
