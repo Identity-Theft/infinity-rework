@@ -1,4 +1,6 @@
 {
+  "enchantment.minecraft.infinity.desc": "Arrows fired from the bow will have a chance of not being used.",
+
   "infinity-rework.midnightconfig.title": "Infinity Rework Config",
 
   "infinity-rework.midnightconfig.category.infinity": "Infinity",
