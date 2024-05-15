@@ -3,9 +3,9 @@
   "package": "identitytheft.infinityrework.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "BowItemMixin",
     "EnchantmentMixin",
-    "InfinityEnchantmentMixin"
+    "InfinityEnchantmentMixin",
+    "RangedWeaponItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
