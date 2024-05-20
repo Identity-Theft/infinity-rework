@@ -43,7 +43,10 @@ public class RangedWeaponItemMixin {
 
 //        InfinityRework.LOGGER.info("Return Chance: {}, RNG: {}, Returned: {}", returnChance, rng, returnArrow);
 
-        returnedArrow = creative || projectileStack.isOf(Items.ARROW) && returnArrow;
+        returnedArrow = creative || ((projectileStack.isOf(Items.ARROW) || InfinityReworkConfig.tippedArrows) &&
+                (projectileStack.isOf(Items.TIPPED_ARROW) || projectileStack.isOf(Items.SPECTRAL_ARROW))
+        ) && returnArrow;
+
         return returnedArrow;
     }
 
