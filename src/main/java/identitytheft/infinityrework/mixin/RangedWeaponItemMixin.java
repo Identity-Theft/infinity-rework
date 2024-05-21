@@ -1,5 +1,6 @@
 package identitytheft.infinityrework.mixin;
 
+import identitytheft.infinityrework.InfinityRework;
 import identitytheft.infinityrework.InfinityReworkConfig;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
@@ -43,9 +44,8 @@ public class RangedWeaponItemMixin {
 
 //        InfinityRework.LOGGER.info("Return Chance: {}, RNG: {}, Returned: {}", returnChance, rng, returnArrow);
 
-        returnedArrow = creative || ((projectileStack.isOf(Items.ARROW) || InfinityReworkConfig.tippedArrows) &&
-                (projectileStack.isOf(Items.TIPPED_ARROW) || projectileStack.isOf(Items.SPECTRAL_ARROW))
-        ) && returnArrow;
+        returnedArrow = creative || returnArrow && (projectileStack.isOf(Items.ARROW) || InfinityReworkConfig.tippedArrows &&
+                (projectileStack.isOf(Items.TIPPED_ARROW) || projectileStack.isOf(Items.SPECTRAL_ARROW)));
 
         return returnedArrow;
     }
