@@ -3,8 +3,7 @@
 
   "infinity-rework.midnightconfig.title": "Infinity Rework Config",
 
-  "infinity-rework.midnightconfig.tippedArrows": "Allow Tipped Arrows",
-  "infinity-rework.midnightconfig.tippedArrows.tooltip": "If infinity should work with tipped and spectral arrows",
+
 
   "infinity-rework.midnightconfig.infinityOnePercentage": "Infinity I",
   "infinity-rework.midnightconfig.infinityOnePercentage.tooltip": "Percentage chance to not consume an arrow",
@@ -16,5 +15,8 @@
   "infinity-rework.midnightconfig.infinityThreePercentage.tooltip": "Percentage chance to not consume an arrow",
 
   "infinity-rework.midnightconfig.allowMending": "Allow Mending",
-  "infinity-rework.midnightconfig.allowMending.tooltip": "If mending should work with infinity"
+  "infinity-rework.midnightconfig.allowMending.tooltip": "If mending should work with infinity",
+
+  "infinity-rework.midnightconfig.tippedArrows": "Allow Tipped Arrows",
+  "infinity-rework.midnightconfig.tippedArrows.tooltip": "If infinity should work with tipped and spectral arrows"
 }

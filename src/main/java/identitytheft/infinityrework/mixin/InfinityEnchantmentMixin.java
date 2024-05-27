@@ -10,7 +10,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(InfinityEnchantment.class)
 public class InfinityEnchantmentMixin {
-	// Allow mending to work with infinity
+	@Inject(at = @At("HEAD"), method = "getMinPower", cancellable = true)
+	private void getMinPower(int level, CallbackInfoReturnable<Integer> cir) {
+		cir.setReturnValue(level * 10);
+	}
+
+	@Inject(at = @At("HEAD"), method = "getMaxPower", cancellable = true)
+	private void getMaxPower(int level, CallbackInfoReturnable<Integer> cir) {
+		cir.setReturnValue(level * 20);
+	}
+
 	@Inject(at = @At("HEAD"), method = "canAccept", cancellable = true)
 	private void canAccept(Enchantment other, CallbackInfoReturnable<Boolean> cir) {
 		if (InfinityReworkConfig.allowMending) {
