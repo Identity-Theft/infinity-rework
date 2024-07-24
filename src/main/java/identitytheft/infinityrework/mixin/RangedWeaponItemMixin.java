@@ -1,68 +1,45 @@
 package identitytheft.infinityrework.mixin;
 
-import identitytheft.infinityrework.InfinityRework;
 import identitytheft.infinityrework.InfinityReworkConfig;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.RangedWeaponItem;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
+import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(RangedWeaponItem.class)
-public class RangedWeaponItemMixin {
-    @Unique
-    private static boolean returnedArrow = false;
+public abstract class RangedWeaponItemMixin {
 
     @Unique
     private static int getArrowChances(int infinityLevel) {
-        if (infinityLevel == 1) return InfinityReworkConfig.infinityOnePercentage;
-        if (infinityLevel == 2) return InfinityReworkConfig.infinityTwoPercentage;
-        if (infinityLevel == 3) return InfinityReworkConfig.infinityThreePercentage;
+        if (InfinityReworkConfig.useScaling) return InfinityReworkConfig.basePercentage + InfinityReworkConfig.increasePerLevel * (infinityLevel - 1);
 
-        return 0;
+        return switch (infinityLevel) {
+            case 1 -> InfinityReworkConfig.infinityOnePercentage;
+            case 2 -> InfinityReworkConfig.infinityTwoPercentage;
+            case 3 -> InfinityReworkConfig.infinityThreePercentage;
+            default -> 0;
+        };
     }
 
     @Redirect(
             method = "getProjectile",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/item/RangedWeaponItem;isInfinity(Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;Z)Z")
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAmmoUse(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;I)I")
     )
-    private static boolean shouldReturnArrow(ItemStack weaponStack, ItemStack projectileStack, boolean creative) {
-        int returnChance = getArrowChances(EnchantmentHelper.getLevel(Enchantments.INFINITY, weaponStack));
+    private static int ammoUse(ServerWorld world, ItemStack rangedWeaponStack, ItemStack projectileStack, int baseAmmoUse) {
 
-        Random random = Random.create();
-        int rng = random.nextInt(100);
+        int level = EnchantmentHelper.getAmmoUse(world, rangedWeaponStack, projectileStack, 1) - 1;
+        if (level == 0) return 1;
 
-        boolean returnArrow = rng <= returnChance;
+        int returnChance = getArrowChances(level);
+        if (returnChance >= 100) return 0;
 
-//        InfinityRework.LOGGER.info("Return Chance: {}, RNG: {}, Returned: {}", returnChance, rng, returnArrow);
+        int rng = world.getRandom().nextInt(100);
+        boolean useArrow = rng > returnChance;
 
-        returnedArrow = creative || returnArrow && (projectileStack.isOf(Items.ARROW) || InfinityReworkConfig.tippedArrows &&
-                (projectileStack.isOf(Items.TIPPED_ARROW) || projectileStack.isOf(Items.SPECTRAL_ARROW)));
-
-        return returnedArrow;
-    }
-
-    @Redirect(
-            method = "shootAll",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;spawnEntity(Lnet/minecraft/entity/Entity;)Z")
-    )
-    boolean updateArrowPickupType(World instance, Entity entity) {
-        PersistentProjectileEntity persistentProjectileEntity = (PersistentProjectileEntity) entity;
-
-        if (returnedArrow) {
-            persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
-        } else {
-            persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
-        }
-
-        return instance.spawnEntity(persistentProjectileEntity);
+        return useArrow ? 1 : 0;
     }
 }

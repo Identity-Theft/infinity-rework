@@ -1,20 +1,31 @@
 {
-  "enchantment.minecraft.infinity.desc": "Arrows fired from the bow will have a chance of not being used.",
-
   "infinity-rework.midnightconfig.title": "Infinity Rework Config",
 
-  "infinity-rework.midnightconfig.tippedArrows": "Allow Tipped Arrows",
-  "infinity-rework.midnightconfig.tippedArrows.tooltip": "If infinity should work with tipped and spectral arrows",
+  "infinity-rework.midnightconfig.allowMending": "Allow Mending",
+  "infinity-rework.midnightconfig.allowMending.tooltip": "§c§l§nREQUIRES RESTART§r\nWhether or not Mending and Infinity should be mutually exclusive",
+
+  "infinity-rework.midnightconfig.tippedArrows": "Allow All Arrows",
+  "infinity-rework.midnightconfig.tippedArrows.tooltip": "§c§l§nREQUIRES RESTART§r\nWhether or not Infinity should work with tipped and spectral arrows",
+
+  "infinity-rework.midnightconfig.useScaling": "Use Scaling",
+  "infinity-rework.midnightconfig.useScaling.tooltip": "Whether the chance of saving an arrow should be use per level scaling or should be set values",
 
   "infinity-rework.midnightconfig.infinityOnePercentage": "Infinity I",
-  "infinity-rework.midnightconfig.infinityOnePercentage.tooltip": "Percentage chance to not consume an arrow",
+  "infinity-rework.midnightconfig.infinityOnePercentage.tooltip": "§e§l§nUse Scaling must be disabled§r\nChance to save an arrow for Infinity I",
 
   "infinity-rework.midnightconfig.infinityTwoPercentage": "Infinity II",
-  "infinity-rework.midnightconfig.infinityTwoPercentage.tooltip": "Percentage chance to not consume an arrow",
+  "infinity-rework.midnightconfig.infinityTwoPercentage.tooltip": "§e§l§nUse Scaling must be disabled§r\nChance to save an arrow for Infinity II",
 
   "infinity-rework.midnightconfig.infinityThreePercentage": "Infinity III",
-  "infinity-rework.midnightconfig.infinityThreePercentage.tooltip": "Percentage chance to not consume an arrow",
+  "infinity-rework.midnightconfig.infinityThreePercentage.tooltip": "§e§l§nUse Scaling must be disabled§r\nChance to save an arrow for Infinity III",
 
-  "infinity-rework.midnightconfig.allowMending": "Allow Mending",
-  "infinity-rework.midnightconfig.allowMending.tooltip": "If mending should work with infinity"
+  "infinity-rework.midnightconfig.basePercentage": "Base Percentage",
+  "infinity-rework.midnightconfig.basePercentage.tooltip": "§e§l§nUse Scaling must be enabled§r\nChance to save an arrow for Infinity I",
+
+  "infinity-rework.midnightconfig.increasePerLevel": "Increase Per Level",
+  "infinity-rework.midnightconfig.increasePerLevel.tooltip": "§e§l§nUse Scaling must be enabled§r\nHow much the chance of saving an arrow should increase per level of Infinity",
+
+  "infinity-rework.midnightconfig.behaviour": "§l§nBehavior",
+  "infinity-rework.midnightconfig.set": "§l§nSet Values",
+  "infinity-rework.midnightconfig.scale": "§l§nPer Level Scaling"
 }

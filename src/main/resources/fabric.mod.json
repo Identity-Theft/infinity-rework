@@ -3,7 +3,7 @@
 	"id": "infinity-rework",
 	"version": "${version}",
 	"name": "Infinity Rework",
-	"description": "Reworks and balances the infinity enchantment",
+	"description": "Reworks and balances the Infinity enchantment by splitting it into three tiers with each tier having a higher chance of saving an arrow and allowing bows to be enchanted with both Infinity and Mending.",
 	"authors": [
 		"Identity Theft"
 	],
@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"identitytheft.infinityrework.InfinityRework"
+          "identitytheft.infinityrework.InfinityRework"
 		]
 	},
 	"mixins": [
@@ -24,8 +24,8 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
+		"minecraft": "~1.21",
+		"java": ">=21",
 		"fabric-api": "*"
 	}
 }
