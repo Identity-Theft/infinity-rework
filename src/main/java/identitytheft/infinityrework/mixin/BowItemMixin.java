@@ -25,7 +25,7 @@ public class BowItemMixin {
 
     @Unique
     private static int getArrowChances(int infinityLevel) {
-        if (InfinityReworkConfig.useScaling) return InfinityReworkConfig.basePercentage + InfinityReworkConfig.infinityOnePercentage * (infinityLevel - 1);
+        if (InfinityReworkConfig.useScaling) return InfinityReworkConfig.basePercentage + InfinityReworkConfig.increasePerLevel * (infinityLevel - 1);
 
         return switch (infinityLevel) {
             case 1 -> InfinityReworkConfig.infinityOnePercentage;
