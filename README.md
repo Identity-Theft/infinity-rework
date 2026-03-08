@@ -10,6 +10,8 @@ Config options include:
 - Max level of Infinity
 - Percentage chance for each level of mending
 
+**[YetAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
+
 ***
 
 [![Curseforge](https://badges.penpow.dev/badges/available/curseforge/cozy-minimal.svg)](https://www.curseforge.com/minecraft/mc-mods/infinity-rework)
