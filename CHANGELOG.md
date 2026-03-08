@@ -3,7 +3,7 @@
 - When using Scale Per Level the max level of Infinity can be configured
 
 ### Changed:
-- Allow Mending and Allow All Arrows are now off be default
+- Allow Mending and Allow All Arrows are now off by default
 - Scale Per Level is now on by default
 - Switched to YetAnotherConfigLib for configs
 - Replace dead homepage link with a link to Modrinth
