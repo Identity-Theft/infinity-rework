@@ -9,7 +9,6 @@
 - Replace dead homepage link with a link to Modrinth
 
 ### Fixed:
-- If the chance of Infinity was above 100% arrows would have a chance of being used
 - If using a mod that removes max enchantment levels and Scale Per Level is off, levels above 3 would always use arrows
 
 # 1.2.1

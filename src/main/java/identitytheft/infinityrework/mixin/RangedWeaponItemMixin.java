@@ -1,5 +1,6 @@
 package identitytheft.infinityrework.mixin;
 
+import identitytheft.infinityrework.InfinityRework;
 import identitytheft.infinityrework.config.Config;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
@@ -15,11 +16,7 @@ public abstract class RangedWeaponItemMixin {
 
     @Unique
     private static int getArrowChances(int infinityLevel) {
-        if (Config.HANDLER.instance().useScaling) {
-            var chance = Config.HANDLER.instance().basePercentage + Config.HANDLER.instance().levelIncrease * (infinityLevel - 1);
-
-            return Math.clamp(chance, 0, 100);
-        }
+        if (Config.HANDLER.instance().useScaling) return Config.HANDLER.instance().basePercentage + Config.HANDLER.instance().levelIncrease * (infinityLevel - 1);
 
         return switch (infinityLevel) {
             case 1 -> Config.HANDLER.instance().infinityOnePercentage;
