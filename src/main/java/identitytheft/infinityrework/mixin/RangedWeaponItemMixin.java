@@ -1,6 +1,6 @@
 package identitytheft.infinityrework.mixin;
 
-import identitytheft.infinityrework.InfinityReworkConfig;
+import identitytheft.infinityrework.config.Config;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.RangedWeaponItem;
@@ -15,13 +15,16 @@ public abstract class RangedWeaponItemMixin {
 
     @Unique
     private static int getArrowChances(int infinityLevel) {
-        if (InfinityReworkConfig.useScaling) return InfinityReworkConfig.basePercentage + InfinityReworkConfig.increasePerLevel * (infinityLevel - 1);
+        if (Config.HANDLER.instance().useScaling) {
+            var chance = Config.HANDLER.instance().basePercentage + Config.HANDLER.instance().levelIncrease * (infinityLevel - 1);
+
+            return Math.clamp(chance, 0, 100);
+        }
 
         return switch (infinityLevel) {
-            case 1 -> InfinityReworkConfig.infinityOnePercentage;
-            case 2 -> InfinityReworkConfig.infinityTwoPercentage;
-            case 3 -> InfinityReworkConfig.infinityThreePercentage;
-            default -> 0;
+            case 1 -> Config.HANDLER.instance().infinityOnePercentage;
+            case 2 -> Config.HANDLER.instance().infinityTwoPercentage;
+            default -> Config.HANDLER.instance().infinityThreePercentage;
         };
     }
 
@@ -30,9 +33,8 @@ public abstract class RangedWeaponItemMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getAmmoUse(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;I)I")
     )
     private static int ammoUse(ServerWorld world, ItemStack rangedWeaponStack, ItemStack projectileStack, int baseAmmoUse) {
-
         int level = EnchantmentHelper.getAmmoUse(world, rangedWeaponStack, projectileStack, 1) - 1;
-        if (level == 0) return 1;
+        if (level <= 0) return 1;
 
         int returnChance = getArrowChances(level);
         if (returnChance >= 100) return 0;

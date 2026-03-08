@@ -1,10 +1,8 @@
 package identitytheft.infinityrework;
 
-import eu.midnightdust.lib.config.MidnightConfig;
+import identitytheft.infinityrework.config.Config;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.minecraft.enchantment.Enchantments;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +13,6 @@ public class InfinityRework implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Starting Infinity Rework");
-
-		MidnightConfig.init(MOD_ID, InfinityReworkConfig.class);
+		Config.HANDLER.load();
 	}
 }

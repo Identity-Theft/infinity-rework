@@ -2,12 +2,13 @@
 
 ![Overview](https://www.bisecthosting.com/images/CF/INFINITY_REWORK/BH_INFINITY_REWORK_Overview.webp)
 
-Reworks and balances the Infinity enchantment by splitting it into three tiers with each tier having a higher chance of saving an arrow and allowing bows to be enchanted with both Infinity and Mending.
+Reworks the Infinity enchantment by splitting it into multiple levels each having a higher chance of saving an arrow.  
 
-- Three tiers of Infinity, each with a higher chance of saving an arrow (I - 25%, II - 50%, III - 75%)
-- Bows can be enchanted with both Infinity and Mending
-- Makes infinity compatible with both tipped and spectral arrows
-- Every feature is fully configurable
+Config options include:
+- Whether a bow can be enchanted with both Infinity and Mending
+- Whether Infinity works with tipped, spectral and modded arrows
+- Max level of Infinity
+- Percentage chance for each level of mending
 
 ***
 

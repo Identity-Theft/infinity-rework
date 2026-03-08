@@ -3,12 +3,12 @@
 	"id": "infinity-rework",
 	"version": "${version}",
 	"name": "Infinity Rework",
-	"description": "Reworks and balances the Infinity enchantment by splitting it into three tiers with each tier having a higher chance of saving an arrow and allowing bows to be enchanted with both Infinity and Mending.",
+	"description": "Reworks the Infinity enchantment by splitting it into multiple levels each having a higher chance of saving an arrow.",
 	"authors": [
 		"Identity Theft"
 	],
 	"contact": {
-		"homepage": "https://identity-theft.github.io/",
+		"homepage": "https://modrinth.com/mod/infinity-rework",
 		"sources": "https://github.com/Identity-Theft/infinity-rework"
 	},
 	"license": "MIT",
@@ -17,15 +17,19 @@
 	"entrypoints": {
 		"main": [
           "identitytheft.infinityrework.InfinityRework"
+		],
+		"modmenu": [
+			"identitytheft.infinityrework.config.GUI"
 		]
 	},
 	"mixins": [
 		"infinity-rework.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
 		"java": ">=21",
+		"yet_another_config_lib_v3": "*",
 		"fabric-api": "*"
 	}
 }
