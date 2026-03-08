@@ -2,7 +2,7 @@
 
 ![Overview](https://www.bisecthosting.com/images/CF/INFINITY_REWORK/BH_INFINITY_REWORK_Overview.webp)
 
-Reworks the Infinity enchantment by splitting it into multiple levels each having a higher chance of saving an arrow.  
+Reworks the Infinity enchantment by splitting it into multiple levels, each having a higher chance of saving an arrow.
 
 Config options include:
 - Whether a bow can be enchanted with both Infinity and Mending

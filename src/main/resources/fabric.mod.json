@@ -3,7 +3,7 @@
 	"id": "infinity-rework",
 	"version": "${version}",
 	"name": "Infinity Rework",
-	"description": "Reworks the Infinity enchantment by splitting it into multiple levels each having a higher chance of saving an arrow.",
+	"description": "Reworks the Infinity enchantment by splitting it into multiple levels, each having a higher chance of saving an arrow.",
 	"authors": [
 		"Identity Theft"
 	],
