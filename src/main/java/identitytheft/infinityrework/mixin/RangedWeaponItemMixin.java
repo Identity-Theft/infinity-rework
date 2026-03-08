@@ -1,6 +1,5 @@
 package identitytheft.infinityrework.mixin;
 
-import identitytheft.infinityrework.InfinityRework;
 import identitytheft.infinityrework.config.Config;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
