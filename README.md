@@ -8,7 +8,7 @@ Config options include:
 - Whether a bow can be enchanted with both Infinity and Mending
 - Whether Infinity works with tipped, spectral and modded arrows
 - Max level of Infinity
-- Percentage chance for each level of mending
+- Percentage chance for each level of Infinity
 
 **[YetAnotherConfigLib](https://modrinth.com/mod/yacl) and [Fabric API](https://modrinth.com/mod/fabric-api) are both required.**
 
