@@ -18,7 +18,3 @@ Config options include:
 [![Modrinth](https://badges.penpow.dev/badges/available/modrinth/cozy-minimal.svg)](https://modrinth.com/mod/infinity-rework)
 [![GitHub](https://badges.penpow.dev/badges/available/github/cozy-minimal.svg)](https://github.com/Identity-Theft/infinity-rework)
 [![ko-fi](https://badges.penpow.dev/badges/donate/kofi-singular/cozy-minimal.svg)](https://ko-fi.com/identitytheft)
-
-***
-
-[![BisectHosting](https://www.bisecthosting.com/images/CF/INFINITY_REWORK/BH_INFINITY_REWORK_Promo.webp "BisectHosting")](https://bisecthosting.com/identity "BisectHosting")
