@@ -17,4 +17,3 @@ Config options include:
 [![Curseforge](https://badges.penpow.dev/badges/available/curseforge/cozy-minimal.svg)](https://www.curseforge.com/minecraft/mc-mods/infinity-rework)
 [![Modrinth](https://badges.penpow.dev/badges/available/modrinth/cozy-minimal.svg)](https://modrinth.com/mod/infinity-rework)
 [![GitHub](https://badges.penpow.dev/badges/available/github/cozy-minimal.svg)](https://github.com/Identity-Theft/infinity-rework)
-[![ko-fi](https://badges.penpow.dev/badges/donate/kofi-singular/cozy-minimal.svg)](https://ko-fi.com/identitytheft)
